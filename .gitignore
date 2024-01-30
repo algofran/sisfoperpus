@@ -35,3 +35,4 @@ package-lock.json
 public
 modules/backend/.eslintignore
 config/app.php
+config/app.php
