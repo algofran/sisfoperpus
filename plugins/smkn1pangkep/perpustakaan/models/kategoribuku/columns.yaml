@@ -1,0 +1,4 @@
+columns:
+    namakategori:
+        label: namakategori
+        type: text

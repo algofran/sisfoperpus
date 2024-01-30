@@ -1,0 +1,10 @@
+columns:
+    buku_id:
+        label: buku_id
+        type: number
+    kategori_id:
+        label: kategori_id
+        type: number
+    kategoribuku_id:
+        label: kategoribuku_id
+        type: number

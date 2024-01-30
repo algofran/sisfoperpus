@@ -1,0 +1,13 @@
+columns:
+    user_id:
+        label: user_id
+        type: number
+    buku_id:
+        label: buku_id
+        type: number
+    ulasan:
+        label: ulasan
+        type: text
+    rating:
+        label: rating
+        type: number

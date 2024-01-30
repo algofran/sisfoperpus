@@ -1,0 +1,9 @@
+fields:
+    user_id:
+        label: 'User id'
+        span: auto
+        type: number
+    buku_id:
+        label: 'Buku id'
+        span: auto
+        type: number

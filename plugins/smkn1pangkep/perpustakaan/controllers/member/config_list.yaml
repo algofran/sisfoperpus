@@ -1,0 +1,12 @@
+list: $/smkn1pangkep/perpustakaan/models/member/columns.yaml
+modelClass: Smkn1Pangkep\Perpustakaan\Models\Member
+title: Member
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'smkn1pangkep/perpustakaan/member/update/:id'

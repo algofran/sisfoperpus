@@ -44,7 +44,7 @@ return [
             'database' => env('DB_DATABASE', 'dbsisfo_pustaka'),
             'driver' => 'mysql',
             'engine' => 'InnoDB',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'localhost'),
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],

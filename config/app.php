@@ -247,7 +247,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'key' => env('APP_KEY', 'ollGAOWJrn0nY7WPLGdLOoIpDxfQifos'),
+=======
+    'key' => env('APP_KEY', 'TSnmM0DP9teFC8jD0PYdvsu6H3hhtZ8h'),
+>>>>>>> 062f63f97689ea1f7eff46806cc8940abcd20a66
     'cipher' => 'AES-256-CBC',
 
     /*

@@ -1,0 +1,10 @@
+name: Peminjaman
+form: $/smkn1pangkep/perpustakaan/models/peminjaman/fields.yaml
+modelClass: Smkn1Pangkep\Perpustakaan\Models\Peminjaman
+defaultRedirect: smkn1pangkep/perpustakaan/peminjaman
+create:
+    redirect: 'smkn1pangkep/perpustakaan/peminjaman/update/:id'
+    redirectClose: smkn1pangkep/perpustakaan/peminjaman
+update:
+    redirect: smkn1pangkep/perpustakaan/peminjaman
+    redirectClose: smkn1pangkep/perpustakaan/peminjaman
