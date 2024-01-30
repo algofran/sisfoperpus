@@ -1,0 +1,10 @@
+name: KategoriBuku
+form: $/smkn1pangkep/perpustakaan/models/kategoribuku/fields.yaml
+modelClass: Smkn1Pangkep\Perpustakaan\Models\KategoriBuku
+defaultRedirect: smkn1pangkep/perpustakaan/kategoribuku
+create:
+    redirect: 'smkn1pangkep/perpustakaan/kategoribuku/update/:id'
+    redirectClose: smkn1pangkep/perpustakaan/kategoribuku
+update:
+    redirect: smkn1pangkep/perpustakaan/kategoribuku
+    redirectClose: smkn1pangkep/perpustakaan/kategoribuku

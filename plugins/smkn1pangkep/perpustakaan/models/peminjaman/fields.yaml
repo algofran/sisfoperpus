@@ -1,0 +1,21 @@
+fields:
+    user_id:
+        label: 'User id'
+        span: auto
+        type: number
+    buku_id:
+        label: 'Buku id'
+        span: auto
+        type: number
+    status_peminjaman:
+        label: 'Status peminjaman'
+        span: auto
+        type: text
+    tanggal_peminjaman:
+        label: 'Tanggal peminjaman'
+        span: auto
+        type: datepicker
+    tanggal_pengembalian:
+        label: 'Tanggal pengembalian'
+        span: auto
+        type: datepicker

@@ -1,0 +1,13 @@
+fields:
+    user_id:
+        label: 'User id'
+        span: auto
+        type: number
+    nama_lengkap:
+        label: 'Nama lengkap'
+        span: auto
+        type: text
+    alamat:
+        label: Alamat
+        span: auto
+        type: text

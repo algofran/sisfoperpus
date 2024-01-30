@@ -1,0 +1,5 @@
+fields:
+    namakategori:
+        label: Namakategori
+        span: auto
+        type: text

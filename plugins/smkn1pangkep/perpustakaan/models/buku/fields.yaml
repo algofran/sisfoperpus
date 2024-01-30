@@ -1,0 +1,21 @@
+fields:
+    judul:
+        label: Judul
+        span: auto
+        type: text
+    penulis:
+        label: Penulis
+        span: auto
+        type: text
+    penerbit:
+        label: Penerbit
+        span: auto
+        type: text
+    tahun_terbit:
+        label: "Tahun terbit"
+        span: auto
+        type: number
+    kategoribuku_id:
+        label: kategori
+        span: auto
+        type: dropdown

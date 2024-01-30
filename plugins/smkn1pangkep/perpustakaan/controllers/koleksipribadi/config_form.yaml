@@ -1,0 +1,10 @@
+name: KoleksiPribadi
+form: $/smkn1pangkep/perpustakaan/models/koleksipribadi/fields.yaml
+modelClass: Smkn1Pangkep\Perpustakaan\Models\KoleksiPribadi
+defaultRedirect: smkn1pangkep/perpustakaan/koleksipribadi
+create:
+    redirect: 'smkn1pangkep/perpustakaan/koleksipribadi/update/:id'
+    redirectClose: smkn1pangkep/perpustakaan/koleksipribadi
+update:
+    redirect: smkn1pangkep/perpustakaan/koleksipribadi
+    redirectClose: smkn1pangkep/perpustakaan/koleksipribadi
