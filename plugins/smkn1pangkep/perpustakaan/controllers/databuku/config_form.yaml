@@ -1,0 +1,10 @@
+name: DataBuku
+form: $/smkn1pangkep/perpustakaan/models/buku/fields.yaml
+modelClass: Smkn1Pangkep\Perpustakaan\Models\Buku
+defaultRedirect: smkn1pangkep/perpustakaan/databuku
+create:
+    redirect: 'smkn1pangkep/perpustakaan/databuku/update/:id'
+    redirectClose: smkn1pangkep/perpustakaan/databuku
+update:
+    redirect: smkn1pangkep/perpustakaan/databuku
+    redirectClose: smkn1pangkep/perpustakaan/databuku

@@ -1,0 +1,54 @@
+plugin:
+    name: 'smkn1pangkep.perpustakaan::lang.plugin.name'
+    description: 'smkn1pangkep.perpustakaan::lang.plugin.description'
+    author: 'SMKN 1 PANGKEP'
+    icon: wn-icon-book
+    replaces: {  }
+navigation:
+    databuku:
+        label: Buku
+        url: smkn1pangkep/perpustakaan/databuku
+        icon: icon-book
+        sideMenu:
+            kategoribuku:
+                label: 'Kategori Buku'
+                url: smkn1pangkep/perpustakaan/kategoribuku
+                icon: icon-book
+            koleksipribadi:
+                label: 'Koleksi Pribadi'
+                url: smkn1pangkep/perpustakaan/koleksipribadi
+                icon: icon-book
+            ulasanbuku:
+                label: 'Ulasan Buku'
+                url: smkn1pangkep/perpustakaan/koleksipribadi
+                icon: icon-book
+    member:
+        label: Member
+        url: smkn1pangkep/perpustakaan/member
+        icon: icon-user
+    peminjam:
+        label: Peminjaman
+        url: smkn1pangkep/perpustakaan/peminjaman
+        icon: icon-refresh
+permissions:
+    editbuku:
+        tab: 'smkn1pangkep.perpustakaan::lang.plugin.name'
+        label: 'Edit buku'
+    kategoribuku:
+        tab: 'smkn1pangkep.perpustakaan::lang.plugin.name'
+        label: 'Kategori buku'
+    koleksipribadi:
+        tab: 'smkn1pangkep.perpustakaan::lang.plugin.name'
+        label: 'Koleksi buku'
+    relasibuku:
+        tab: 'smkn1pangkep.perpustakaan::lang.plugin.name'
+        label: 'Relasi buku'
+    member:
+        tab: 'smkn1pangkep.perpustakaan::lang.plugin.name'
+        label: Member
+    ulasanbuku:
+        tab: 'smkn1pangkep.perpustakaan::lang.plugin.name'
+        label: 'Ulasan buku'
+    peminjaman:
+        tab: 'smkn1pangkep.perpustakaan::lang.plugin.name'
+        label: Peminjaman

@@ -1,0 +1,10 @@
+name: Member
+form: $/smkn1pangkep/perpustakaan/models/member/fields.yaml
+modelClass: Smkn1Pangkep\Perpustakaan\Models\Member
+defaultRedirect: smkn1pangkep/perpustakaan/member
+create:
+    redirect: 'smkn1pangkep/perpustakaan/member/update/:id'
+    redirectClose: smkn1pangkep/perpustakaan/member
+update:
+    redirect: smkn1pangkep/perpustakaan/member
+    redirectClose: smkn1pangkep/perpustakaan/member

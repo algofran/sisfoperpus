@@ -1,0 +1,17 @@
+fields:
+    user_id:
+        label: 'User id'
+        span: auto
+        type: number
+    buku_id:
+        label: 'Buku id'
+        span: auto
+        type: number
+    ulasan:
+        label: Ulasan
+        span: auto
+        type: text
+    rating:
+        label: Rating
+        span: auto
+        type: number
