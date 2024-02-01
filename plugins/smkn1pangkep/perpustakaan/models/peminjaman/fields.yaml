@@ -1,7 +1,7 @@
 fields:
     member:
         label: Member
-        nameFrom: "nama_lengkap"
+        nameFrom: nama_lengkap
         descriptionFrom: description
         list: $/smkn1pangkep/perpustakaan/models/member/columns.yaml
         span: auto
@@ -14,14 +14,16 @@ fields:
         span: auto
         type: recordfinder
     status_peminjaman:
-        label: "Status peminjaman"
+        label: 'Status peminjaman'
         span: auto
         type: text
     tanggal_peminjaman:
-        label: "Tanggal peminjaman"
+        label: 'Tanggal peminjaman'
+        mode: date
         span: auto
         type: datepicker
     tanggal_pengembalian:
-        label: "Tanggal pengembalian"
+        label: 'Tanggal pengembalian'
+        mode: date
         span: auto
         type: datepicker

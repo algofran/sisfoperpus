@@ -1,0 +1,42 @@
+title = "Home"
+url = "/katalog"
+layout = "default"
+is_hidden = 0
+==
+use Smkn1Pangkep\Perpustakaan\Models\Buku;
+public function onStart() {
+    $buku = Buku::get();
+    $this->page['dataBuku']= $buku;
+} 
+==
+{% partial 'nav/section-nav' %}
+<section id="hero" class="bg-gradient-to-b from-blue-500 to-blue-600 hero">
+    <h1 class="text-white mb-0">
+        Katalog Buku
+    </h1>
+    <h2 class="text-blue-300 font-body font-light mb-0">
+        Perpustakaan SMKN 1 Pangkajene
+    </h2>
+</section>
+<section id="body" class="py-20 flex-grow" style="width:100%">
+    <div class="container max-w-screen-xl">
+        <div class="block" style="flex-direction: row;display: flex;gap: 15px;">
+            {% for buku in this.page.dataBuku %}
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ buku.judul }}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">status:{{ buku.status == 1?'Terpinjam':'Tersedia' }}</li>
+                    <li class="list-group-item">penulis:{{buku.penulis}}</li>
+                    <li class="list-group-item">tahun terbit:{{ buku.tahun_terbit}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">ulasan</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
