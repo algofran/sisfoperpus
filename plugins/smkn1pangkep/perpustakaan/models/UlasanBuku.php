@@ -37,4 +37,8 @@ class UlasanBuku extends Model
     public function  getBukuIdOptions(){
         return Buku::get()->pluck("judul","id");
     }
+    public $belongsTo = [
+        'member' =>  Member::class,
+        'buku' => Buku::class
+    ];
 }

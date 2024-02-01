@@ -31,4 +31,9 @@ class Peminjaman extends Model
      * @var array Attribute names to encode and decode using JSON.
      */
     public $jsonable = [];
+    
+    public $belongsTo = [
+        'member' =>  Member::class,
+        'buku' => Buku::class
+    ];
 }

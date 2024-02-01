@@ -42,3 +42,9 @@
 1.0.15:
     - 'Updated table smkn1pangkep_perpustakaan_koleksipribadi'
     - builder_table_update_smkn1pangkep_perpustakaan_koleksipribadi_2.php
+1.0.16:
+    - 'Updated table smkn1pangkep_perpustakaan_peminjaman'
+    - builder_table_update_smkn1pangkep_perpustakaan_peminjaman_3.php
+1.0.17:
+    - 'Updated table smkn1pangkep_perpustakaan_peminjaman'
+    - builder_table_update_smkn1pangkep_perpustakaan_peminjaman_4.php

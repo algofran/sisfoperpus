@@ -1,10 +1,14 @@
 columns:
-    user_id:
+    member:
         label: user_id
-        type: number
+        type: text
+        relation: member
+        select: nama_lengkap
     buku_id:
-        label: buku_id
+        label: Judul Buku
         type: number
+        relation: buku
+        select: judul
     ulasan:
         label: ulasan
         type: text
