@@ -34,6 +34,6 @@ class KoleksiPribadi extends Model
 
     public $belongsTo =[
         "user"=> user
-    ]
+    ];
 }
 
