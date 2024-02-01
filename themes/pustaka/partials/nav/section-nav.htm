@@ -30,22 +30,12 @@ function onStart()
 ">
     <div class="p-4 divide-x divide-white divide-opacity-40 overflow-x-auto whitespace-nowrap">
         {% partial 'nav/section' icon="home" text="Home" url="home"|page active=(active == 'home') %}
-        {% partial 'nav/section' icon="home" text="CMS" url="cms/index"|page active=(active == 'cms') %}
-        {% partial 'nav/section' icon="framework" text="Snowboard" url="snowboard/index"|page active=(active == 'snowboard') %}
-        {% if pagesInstalled %}
-            {% partial 'nav/section' icon="static-page" text="Pages" active=(active == 'pages') %}
-        {% endif %}
-        {% if blogInstalled %}
-            {% partial 'nav/section' icon="blog" text="Blog" url="blog/index"|page active=(active == 'blog') %}
-        {% endif %}
-        {% if forumInstalled %}
-            {% partial 'nav/section' icon="forum" text="Forum" active=(active == 'forum') %}
-        {% endif %}
         {% if userInstalled %}
             {% partial 'nav/section' icon="user" text="User" url="user/index"|page active=(active == 'user') %}
         {% endif %}
         {% if snowmanInstalled %}
             {% partial 'nav/section' icon="snowman" text="Snowman" url="snowman/index"|page  active=(active == 'snowman') %}
         {% endif %}
+        {% partial 'nav/section' icon="book" text="Katalog" url="katalog"|page  active=(active == 'katalog') %}
     </div>
 </nav>
