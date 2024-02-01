@@ -1,0 +1,113 @@
+title = "Registrasi"
+url = "/registrasi"
+layout = "user"
+is_hidden = 0
+
+[account daftar]
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+==
+<?php   
+use ApplicationException;
+use Lang;
+use Auth;
+use ValidationException;
+use Flash;
+use Winter\User\Models\User as UserModel;
+use Smkn1Pangkep\Perpustakaan\Models\Member;
+use Winter\User\Models\Settings as UserSettings;
+
+public function loginAttribute()
+{
+    return UserSettings::get('login_attribute', UserSettings::LOGIN_EMAIL);
+}
+
+public function onRegister()
+    {
+        try {
+            /*
+             * Validate input
+             */
+            $data = post();
+
+            if (!array_key_exists('password_confirmation', $data)) {
+                $data['password_confirmation'] = post('password');
+            }
+
+            $rules = (new UserModel)->rules;
+
+            if ($this->loginAttribute() !== UserSettings::LOGIN_USERNAME) {
+                unset($rules['username']);
+            }
+
+            $validation = Validator::make($data, $rules);
+            if ($validation->fails()) {
+                throw new ValidationException($validation);
+            }
+
+            /*
+             * Record IP address
+             */
+            if ($ipAddress = Request::ip()) {
+                $data['created_ip_address'] = $data['last_ip_address'] = $ipAddress;
+            }
+
+            /*
+             * Register user
+             */
+            Event::fire('winter.user.beforeRegister', [&$data]);
+
+            $requireActivation = UserSettings::get('require_activation', true);
+            $automaticActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_AUTO;
+            $userActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_USER;
+            $adminActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_ADMIN;
+            $user = Auth::register($data, $automaticActivation);
+            $member= new Member;
+            $member->nama_lengkap =$user->name;
+            $member->alamat = $data['alamat'];
+            $member->user_id = $user->id;
+            $member->save();
+
+            Event::fire('winter.user.register', [$user, $data]);
+
+            /*
+             * Activation is by the user, send the email
+             */
+            if ($userActivation) {
+                $this->sendActivationEmail($user);
+
+                Flash::success(Lang::get(/*An activation email has been sent to your email address.*/'winter.user::lang.account.activation_email_sent'));
+            }
+
+            /*
+             * Activation is by the admin, show message
+             * For automatic email on account activation Winter.Notify plugin is needed
+             */
+            if ($adminActivation) {
+                Flash::success(Lang::get(/*You have successfully registered. Your account is not yet active and must be approved by an administrator.*/'winter.user::lang.account.activation_by_admin'));
+            }
+
+            /*
+             * Automatically activated or not required, log the user in
+             */
+            if ($automaticActivation || !$requireActivation) {
+                Auth::login($user);
+            }
+
+            /*
+             * Redirect to the intended page after successful sign in
+             */
+          
+            return \Redirect::to('/');
+        }
+        catch (Exception $ex) {
+            if (Request::ajax()) throw $ex;
+            else Flash::error($ex->getMessage());
+        }
+    }
+
+==
+<div id="account-component">
+    {% component 'daftar' %}
+</div>
