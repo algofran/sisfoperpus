@@ -64,7 +64,9 @@ public function onRegister()
             $adminActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_ADMIN;
             $user = Auth::register($data, $automaticActivation);
             $member= new Member;
-            $member->nama_lengkap =$user->name;
+            trace_log("data input : ");
+            trace_log($data);
+            $member->nama_lengkap = $data["first_name"];
             $member->alamat = $data['alamat'];
             $member->user_id = $user->id;
             $member->save();
