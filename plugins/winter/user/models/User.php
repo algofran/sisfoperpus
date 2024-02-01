@@ -38,7 +38,7 @@ class User extends UserBase
         'groups' => [UserGroup::class, 'table' => 'users_groups']
     ];
 
-    public $attachOne = [
+    public $attachOne = [       
         'avatar' => \System\Models\File::class
     ];
 

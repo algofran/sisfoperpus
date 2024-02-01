@@ -1,12 +1,12 @@
-title: 'Ulasan Buku'
-modelClass: Smkn1Pangkep\Perpustakaan\Models\UlasanBuku
 list: $/smkn1pangkep/perpustakaan/models/ulasanbuku/columns.yaml
-recordUrl: 'smkn1pangkep/perpustakaan/ulasanbuku/update/:id'
+modelClass: Smkn1Pangkep\Perpustakaan\Models\UlasanBuku
+title: UlasanBuku
 noRecordsMessage: 'backend::lang.list.no_records'
-recordsPerPage: 20
 showSetup: true
 showCheckboxes: true
+recordsPerPage: 20
 toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'smkn1pangkep/perpustakaan/ulasanbuku/update/:id'

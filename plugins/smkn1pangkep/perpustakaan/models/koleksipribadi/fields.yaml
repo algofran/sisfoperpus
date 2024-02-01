@@ -1,9 +1,15 @@
 fields:
-    user_id:
-        label: 'User id'
+    member:
+        label: Member
+        nameFrom: "nama_lengkap"
+        descriptionFrom: description
+        list: $/smkn1pangkep/perpustakaan/models/member/columns.yaml
         span: auto
-        type: number
-    buku_id:
-        label: 'Buku id'
+        type: recordfinder
+    buku:
+        label: Buku
+        nameFrom: judul
+        descriptionFrom: description
+        list: $/smkn1pangkep/perpustakaan/models/buku/columns.yaml
         span: auto
-        type: number
+        type: recordfinder

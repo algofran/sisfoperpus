@@ -32,8 +32,14 @@ class KoleksiPribadi extends Model
      */
     public $jsonable = [];
 
+<<<<<<< HEAD
+    public $belongsTo = [
+        'member' =>  Member::class,
+        'buku' => Buku::class
+=======
     public $belongsTo =[
         "user"=> user
-    ]
+>>>>>>> 1212f6e4595b0cdcb85df47a1b469f06391ebb7b
+    ];
 }
 

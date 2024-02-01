@@ -31,4 +31,10 @@ class UlasanBuku extends Model
      * @var array Attribute names to encode and decode using JSON.
      */
     public $jsonable = [];
+    public function  getMemberIdOptions(){
+        return Member::get()->pluck("nama_lengkap","id");
+    }
+    public function  getBukuIdOptions(){
+        return Buku::get()->pluck("judul","id");
+    }
 }

@@ -1,7 +1,9 @@
 columns:
     user_id:
-        label: user_id
-        type: number
+        label: user
+        type: text
+        relation: user
+        select: email
     nama_lengkap:
         label: nama_lengkap
         type: text

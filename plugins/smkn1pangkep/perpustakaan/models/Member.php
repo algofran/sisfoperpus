@@ -31,4 +31,7 @@ class Member extends Model
      * @var array Attribute names to encode and decode using JSON.
      */
     public $jsonable = [];
+    public $belongsTo = [
+        'user' =>  \Winter\User\Models\User::class
+    ];
 }

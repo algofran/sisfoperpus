@@ -20,7 +20,7 @@ navigation:
                 icon: icon-book
             ulasanbuku:
                 label: 'Ulasan Buku'
-                url: smkn1pangkep/perpustakaan/koleksipribadi
+                url: smkn1pangkep/perpustakaan/ulasanbuku
                 icon: icon-book
     member:
         label: Member
