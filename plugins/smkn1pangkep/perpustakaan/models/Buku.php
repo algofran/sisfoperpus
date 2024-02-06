@@ -32,6 +32,10 @@ class Buku extends Model
      */
     public $jsonable = [];
 
+    public $attachOne = [
+        'cover' => 'System\Models\File'
+    ];
+
     public function  getKategoribukuIdOptions(){
         return KategoriBuku::get()->pluck("namakategori","id");
     }

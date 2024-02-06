@@ -20,10 +20,10 @@ public function onStart() {
 </section>
 <section id="body" class="py-20 flex-grow" style="width:100%">
     <div class="container max-w-screen-xl">
-        <div class="block" style="flex-direction: row;display: flex;gap: 15px;">
+        <div class="block" style="flex-direction: row;display: flex;gap: 15px; flex-wrap: wrap;">
             {% for buku in this.page.dataBuku %}
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card" style="width: 13rem;">
+                <img class="card-img-top" src="{{ buku.cover.path}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ buku.judul }}</h5>
                 </div>
@@ -33,7 +33,7 @@ public function onStart() {
                     <li class="list-group-item">tahun terbit:{{ buku.tahun_terbit}}</li>
                 </ul>
                 <div class="card-body">
-                    <a href="#" class="card-link">ulasan</a>
+                    <a href="/ulasan/{{ buku.id }}" class="card-link">ulasan</a>
                 </div>
             </div>
             {% endfor %}

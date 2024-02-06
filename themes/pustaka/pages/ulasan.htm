@@ -1,0 +1,112 @@
+title = "ulasan"
+url = "/ulasan/:id"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "user/index"
+==
+<?php
+use Smkn1Pangkep\Perpustakaan\Models\ulasan;
+use Smkn1Pangkep\Perpustakaan\Models\Member;
+use Smkn1Pangkep\Perpustakaan\Models\UlasanBuku;
+use Smkn1Pangkep\Perpustakaan\Models\Buku;
+public $buku=null;
+function onStart(){
+    $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+    $buku = Buku::find($uriSegments[2]);
+    $this['buku']= $buku;
+    
+}
+public function onSave(){
+    $data=input();
+    $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+    $buku = Buku::find($uriSegments[2]);
+    $member=Member::where("user_id",$data["user"])->first();
+    trace_log($data);
+    $ulasan = new UlasanBuku;
+    $ulasan->buku_id= $buku->id;
+    $ulasan->member_id=$member->id;
+    $ulasan->ulasan=$data["ulasan"];
+    $ulasan->rating=$data["rating"];
+    $ulasan->save();
+}
+?>
+==
+<section id="hero" class="bg-gradient-to-b from-blue-500 to-blue-600 hero">
+    <h1 class="text-white mb-0">
+       {{buku.judul}}
+    </h1>
+    <h2 class="text-blue-300 font-body font-light mb-0">
+        Perpustakaan SMKN 1 Pangkajene
+    </h2>
+</section>
+<section id="body" class="py-20 container " style="justify-items:left row;display: flex;gap: 15px; flex-wrap:nowrap;">
+    <div class="">
+        <div class="block" style="flex-direction: row;display: flex;gap: 15px; flex-wrap: wrap;">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ buku.cover.path}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ buku.judul }}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">status:{{ buku.status == 1?'Terpinjam':'Tersedia' }}</li>
+                    <li class="list-group-item">penulis:{{buku.penulis}}</li>
+                    <li class="list-group-item">tahun terbit:{{ buku.tahun_terbit}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="width: 600px;">
+        <form data-request="onSave">  
+            <div>
+                <label for="exampleInputEmail1"></label>Nama
+                <input type="nama" name="nama" class="form-control" placeholder="masukkan nama">
+            </div>
+            <div class="form-group" >
+              <label for="exampleFormControlInput1">Email </label>
+              <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">ulasan</label>
+              <textarea name="ulasan" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="masukkan ulasan"></textarea>
+            </div>
+            <input type="hidden" name="user" value="{{user.id}}">
+            <label for="exampleFormControlInput1">Rating </label>
+            <input type="number" name="rating" class="form-control" id="rating" >
+
+
+            <div class="rate" data-rate-value=0></div>
+
+
+            <button type="submit" class="btn btn-primary">kirim</button>
+            <div class="form-group" >
+              </div>
+          </form>
+    </div>
+</section>
+{% put scripts%}
+<script>
+    $(document).ready(function(){
+        var options = {
+            max_value: 6,
+            step_size: 0.5,
+            selected_symbol_type: 'hearts',
+            url: 'http://localhost/test.php',
+            initial_value: 3,
+            update_input_field_name: $("#input2"),
+        }
+        
+        $(".rate").rate({
+            max_value: 6,
+            step_size: 1,
+        });
+        $(".rate").on("change", function(ev, data){
+            console.log(data)
+            $("#rating").val(data.to)
+        });
+    });
+</script>
+
+{% endput%}

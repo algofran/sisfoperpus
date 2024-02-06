@@ -12,10 +12,19 @@ fields:
         span: auto
         type: text
     tahun_terbit:
-        label: "Tahun terbit"
+        label: 'Tahun terbit'
         span: auto
         type: number
     kategoribuku_id:
         label: kategori
         span: auto
         type: dropdown
+    cover:
+        label: Cover
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

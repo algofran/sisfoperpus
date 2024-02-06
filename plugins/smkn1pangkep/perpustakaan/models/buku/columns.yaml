@@ -1,4 +1,9 @@
 columns:
+    cover:
+        label: cover
+        type: partial
+        path: cover
+        sortable: false
     judul:
         label: judul
         type: text
