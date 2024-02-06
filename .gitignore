@@ -34,5 +34,4 @@ package-lock.json
 # Ignore generated public directory from `winter:mirror public`
 public
 modules/backend/.eslintignore
-config/app.php
-config/app.php
+/config

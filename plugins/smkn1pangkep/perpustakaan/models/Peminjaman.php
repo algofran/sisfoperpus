@@ -36,4 +36,17 @@ class Peminjaman extends Model
         'member' =>  Member::class,
         'buku' => Buku::class
     ];
+
+    public function afterSave() {
+        $status = 0;
+
+        if ($this->tanggal_peminjaman != null && $this->tanggal_pengembalian == null) {
+            $status = 1;
+        }
+        if ($this->tanggal_peminjaman != null && $this->tanggal_pengembalian != null) {
+            $status = 0;
+        }
+
+        $this->status = $status;
+    }
 }

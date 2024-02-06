@@ -2,6 +2,7 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use Smkn1Pangkep\Perpustakaan\Models\Member as ModelMember;    
 
 class Member extends Controller
 {
@@ -18,5 +19,12 @@ class Member extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Smkn1Pangkep.Perpustakaan', 'member');
+    }
+
+    public function onSave() {
+        $input = input();
+        $member = new ModelMember;
+        
+        
     }
 }
