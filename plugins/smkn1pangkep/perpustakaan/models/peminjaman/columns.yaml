@@ -1,20 +1,25 @@
 columns:
-    member:
-        label: user_id
-        type: text
-        relation: member
-        select: nama_lengkap
-    buku_id:
-        label: Judul Buku
-        type: number
-        relation: buku
-        select: judul
-    tanggal_peminjaman:
-        label: tanggal_peminjaman
-        type: text
-    tanggal_pengembalian:
-        label: tanggal_pengembalian
-        type: text
-    status_peminjaman:
-        label: status_peminjaman
-        type: text
+  member:
+    label: user_id
+    type: text
+    relation: member
+    select: nama_lengkap
+  buku_id:
+    label: "Judul Buku"
+    type: number
+    relation: buku
+    select: judul
+  tanggal_peminjaman:
+    label: tanggal_peminjaman
+    type: text
+  tanggal_pengembalian:
+    label: tanggal_pengembalian
+    type: text
+  status_peminjaman:
+    label: status_peminjaman
+    type: text
+  edit:
+    label: edit
+    type: partial
+    path: edit
+    clickable: false

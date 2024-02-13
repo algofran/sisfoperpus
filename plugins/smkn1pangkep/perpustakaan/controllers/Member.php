@@ -2,7 +2,8 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
-use Smkn1Pangkep\Perpustakaan\Models\Member as ModelMember;    
+use Smkn1Pangkep\Perpustakaan\Models\Member as ModelMember;  
+use Winter\User\Models\User;  
 
 class Member extends Controller
 {
@@ -21,10 +22,21 @@ class Member extends Controller
         BackendMenu::setContext('Smkn1Pangkep.Perpustakaan', 'member');
     }
 
-    public function onSave() {
+    public function formAfterSave($model) {
         $input = input();
-        $member = new ModelMember;
-        
+        $user = new User;
+
+        trace_log($input);
+
+        $user->email = $input['email'];
+        $user->name = $model->nama_lengkap;
+        $user->username = $input['email'];
+        $user->surname = $model->nama_lengkap;
+        $user->password = $input['password'];
+        $user->password_confirmation = $input['password'];
+        $user->save();
+
+
         
     }
 }
