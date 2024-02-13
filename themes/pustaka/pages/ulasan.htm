@@ -42,23 +42,23 @@ public function onSave(){
         Perpustakaan SMKN 1 Pangkajene
     </h2>
 </section>
-<section id="body" class="py-20 container " style="justify-items:left row;display: flex;gap: 15px; flex-wrap:nowrap;">
+<section id="body" class="py-20 container "  style="justify-items:left row;display: flex;gap: 15px; flex-wrap:nowrap ;">
     <div class="">
         <div class="block" style="flex-direction: row;display: flex;gap: 15px; flex-wrap: wrap;">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="{{ buku.cover.path}}" alt="Card image cap">
-                <div class="card-body">
+                <div class="card-body" style="text-align: center;">
                     <h5 class="card-title">{{ buku.judul }}</h5>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">status:{{ buku.status == 1?'Terpinjam':'Tersedia' }}</li>
-                    <li class="list-group-item">penulis:{{buku.penulis}}</li>
-                    <li class="list-group-item">tahun terbit:{{ buku.tahun_terbit}}</li>
+                <ul class="list-group list-group-flush" >
+                    <li class="list-group-item">status: {{ buku.status == 1?'Terpinjam':'Tersedia' }}</li>
+                    <li class="list-group-item">penulis: {{buku.penulis}}</li>
+                    <li class="list-group-item">tahun terbit: {{ buku.tahun_terbit}}</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div style="width: 600px;">
+    <div style="width: 600px; ">
         <form data-request="onSave">  
             <div>
                 <label for="exampleInputEmail1"></label>Nama
@@ -66,7 +66,7 @@ public function onSave(){
             </div>
             <div class="form-group" >
               <label for="exampleFormControlInput1">Email </label>
-              <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="email@example.com">
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">ulasan</label>
@@ -77,13 +77,26 @@ public function onSave(){
             <input type="number" name="rating" class="form-control" id="rating" >
 
 
-            <div class="rate" data-rate-value=0></div>
+            <div class="rate" data-rate-value=0 ></div>
 
 
-            <button type="submit" class="btn btn-primary">kirim</button>
+            <button type="submit" class="btn btn-primary" style="font-size: larger;">kirim</button>
             <div class="form-group" >
               </div>
           </form>
+          <div>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
     </div>
 </section>
 {% put scripts%}
