@@ -24,7 +24,7 @@ public function onStart() {
             {% for buku in this.page.dataBuku %}
             <div class="card" style="width: 13rem;">
                 <img class="card-img-top" src="{{ buku.cover.path}}" alt="Card image cap">
-                <div class="card-body">
+                <div class="card-body" style="text-align: center;">
                     <h5 class="card-title">{{ buku.judul }}</h5>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -32,8 +32,8 @@ public function onStart() {
                     <li class="list-group-item">penulis:{{buku.penulis}}</li>
                     <li class="list-group-item">tahun terbit:{{ buku.tahun_terbit}}</li>
                 </ul>
-                <div class="card-body">
-                    <a href="/ulasan/{{ buku.id }}" class="card-link">ulasan</a>
+                <div class="card-body" style="text-align: center;font-size: large;background-color: aquamarine;text-decoration: solid;" >
+                    <a href="/ulasan/{{ buku.id }}" class="button" ><span style="color: black;">ulasan</span></a>
                 </div>
             </div>
             {% endfor %}
