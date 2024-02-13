@@ -1,27 +1,30 @@
 columns:
-  cover:
-    label: cover
-    type: partial
-    path: ~/plugins/smkn1pangkep/perpustakaan/controllers/databuku/_cover.htm
-    sortable: false
-  judul:
-    label: judul
-    type: text
-  penulis:
-    label: penulis
-    type: text
-  penerbit:
-    label: penerbit
-    type: text
-  tahun_terbit:
-    label: tahun_terbit
-    type: number
-  created_at:
-    label: created_at
-    type: datetime
-  updated_at:
-    label: updated_at
-    type: datetime
-  deleted_at:
-    label: deleted_at
-    type: datetime
+    cover:
+        label: cover
+        type: partial
+        path: ~/plugins/smkn1pangkep/perpustakaan/controllers/databuku/_cover.htm
+        sortable: false
+    judul:
+        label: judul
+        type: text
+    penulis:
+        label: penulis
+        type: text
+    penerbit:
+        label: penerbit
+        type: text
+    tahun_terbit:
+        label: tahun_terbit
+        type: number
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime
+    status:
+        label: status
+        type: switch

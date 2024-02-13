@@ -22,7 +22,7 @@ class Member extends Controller
         BackendMenu::setContext('Smkn1Pangkep.Perpustakaan', 'member');
     }
 
-    public function formAfterSave($model) {
+    public function formAfterCreate($model) {
         $input = input();
         $user = new User;
 

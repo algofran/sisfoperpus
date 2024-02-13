@@ -34,11 +34,12 @@ class Peminjaman extends Model
     
     public $belongsTo = [
         'member' =>  Member::class,
-        'buku' => Buku::class
+        'buku' => [Buku::class, "scope"=>"isReady"]
     ];
 
     public function afterSave() {
         $status = 0;
+        $buku = Buku::find($this->buku_id);
 
         if ($this->tanggal_peminjaman != null && $this->tanggal_pengembalian == null) {
             $status = 1;
@@ -46,6 +47,8 @@ class Peminjaman extends Model
         if ($this->tanggal_peminjaman != null && $this->tanggal_pengembalian != null) {
             $status = 0;
         }
+        $buku->status=$status;
+        $buku->save();
 
         $this->status = $status;
     }

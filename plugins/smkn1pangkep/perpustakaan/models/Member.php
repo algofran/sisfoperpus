@@ -25,6 +25,9 @@ class Member extends Model
      * @var array Validation rules
      */
     public $rules = [
+        "nama_lengkap"=>"required|min:4",
+        "alamat"=>"required",
+       
     ];
     
     /**
