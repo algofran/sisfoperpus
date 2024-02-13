@@ -57,3 +57,6 @@
 1.0.20:
     - 'Updated table smkn1pangkep_perpustakaan_member'
     - builder_table_update_smkn1pangkep_perpustakaan_member.php
+1.0.21:
+    - 'Updated table smkn1pangkep_perpustakaan_ulasanbuku'
+    - builder_table_update_smkn1pangkep_perpustakaan_ulasanbuku_2.php
