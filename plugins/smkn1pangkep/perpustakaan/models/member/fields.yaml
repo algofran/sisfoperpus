@@ -1,13 +1,15 @@
 fields:
-    nama_lengkap:
-        label: 'Nama lengkap'
-        span: auto
-        type: text
-    user:
-        span: auto
-        path: user
-        type: partial
-    alamat:
-        label: Alamat
-        span: auto
-        type: text
+  nama_lengkap:
+    label: "Nama lengkap"
+    span: auto
+    type: text
+  user:
+    span: auto
+    path: user
+    type: partial
+    context:
+      - create
+  alamat:
+    label: Alamat
+    span: auto
+    type: text

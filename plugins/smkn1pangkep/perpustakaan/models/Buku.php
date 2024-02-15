@@ -25,6 +25,12 @@ class Buku extends Model
      * @var array Validation rules
      */
     public $rules = [
+        "tahun_terbit"=>"required|min:4",
+        "judul"=>"required",
+        "penulis"=>"required",
+        "penerbit"=>"required",
+        "kategoribuku_id"=>"required",
+        "cover"=>"required",
     ];
     
     /**
@@ -35,6 +41,9 @@ class Buku extends Model
     public $attachOne = [
         'cover' => 'System\Models\File'
     ];
+    public function scopeIsReady($query){
+        $query->where("status",0);
+    }
 
     public function  getKategoribukuIdOptions(){
         return KategoriBuku::get()->pluck("namakategori","id");
