@@ -58,11 +58,19 @@
     - 'Updated table smkn1pangkep_perpustakaan_member'
     - builder_table_update_smkn1pangkep_perpustakaan_member.php
 1.0.21:
+<<<<<<< HEAD
+    - 'Updated table smkn1pangkep_perpustakaan_ulasanbuku'
+    - builder_table_update_smkn1pangkep_perpustakaan_ulasanbuku_2.php
+=======
     - 'Updated table smkn1pangkep_perpustakaan_data'
     - builder_table_update_smkn1pangkep_perpustakaan_data_2.php
+<<<<<<< HEAD
 1.0.22:
     - 'Updated table smkn1pangkep_perpustakaan_data'
     - builder_table_update_smkn1pangkep_perpustakaan_data_3.php
 1.0.23:
     - 'Updated table smkn1pangkep_perpustakaan_data'
     - builder_table_update_smkn1pangkep_perpustakaan_data_4.php
+=======
+>>>>>>> 1abab8b647bfe29daba950ace82d833e39bd4197
+>>>>>>> f5afba3ff457fbe7883564d481a5ee9e10981327
