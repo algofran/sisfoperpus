@@ -1,68 +1,68 @@
 1.0.1:
-  - "Initialize plugin."
+    - 'Initialize plugin.'
 1.0.2:
-  - "Created table smkn1pangkep_perpustakaan_data"
-  - builder_table_create_smkn1pangkep_perpustakaan_data.php
+    - 'Created table smkn1pangkep_perpustakaan_data'
+    - builder_table_create_smkn1pangkep_perpustakaan_data.php
 1.0.3:
-  - "Created table smkn1pangkep_perpustakaan_ulasanbuku"
-  - builder_table_create_smkn1pangkep_perpustakaan_ulasanbuku.php
+    - 'Created table smkn1pangkep_perpustakaan_ulasanbuku'
+    - builder_table_create_smkn1pangkep_perpustakaan_ulasanbuku.php
 1.0.4:
-  - "Created table smkn1pangkep_perpustakaan_koleksipribadi"
-  - builder_table_create_smkn1pangkep_perpustakaan_koleksipribadi.php
+    - 'Created table smkn1pangkep_perpustakaan_koleksipribadi'
+    - builder_table_create_smkn1pangkep_perpustakaan_koleksipribadi.php
 1.0.5:
-  - "Created table smkn1pangkep_perpustakaan_kategoribuku_relasi"
-  - builder_table_create_smkn1pangkep_perpustakaan_kategoribuku_relasi.php
+    - 'Created table smkn1pangkep_perpustakaan_kategoribuku_relasi'
+    - builder_table_create_smkn1pangkep_perpustakaan_kategoribuku_relasi.php
 1.0.6:
-  - "Updated table smkn1pangkep_perpustakaan_kategoribuku_relasi"
-  - builder_table_update_smkn1pangkep_perpustakaan_kategoribuku_relasi.php
+    - 'Updated table smkn1pangkep_perpustakaan_kategoribuku_relasi'
+    - builder_table_update_smkn1pangkep_perpustakaan_kategoribuku_relasi.php
 1.0.7:
-  - "Created table smkn1pangkep_perpustakaan_kategoribuku"
-  - builder_table_create_smkn1pangkep_perpustakaan_kategoribuku.php
+    - 'Created table smkn1pangkep_perpustakaan_kategoribuku'
+    - builder_table_create_smkn1pangkep_perpustakaan_kategoribuku.php
 1.0.8:
-  - "Created table smkn1pangkep_perpustakaan_member"
-  - builder_table_create_smkn1pangkep_perpustakaan_member.php
+    - 'Created table smkn1pangkep_perpustakaan_member'
+    - builder_table_create_smkn1pangkep_perpustakaan_member.php
 1.0.9:
-  - "Created table smkn1pangkep_perpustakaan_peminjaman"
-  - builder_table_create_smkn1pangkep_perpustakaan_peminjaman.php
+    - 'Created table smkn1pangkep_perpustakaan_peminjaman'
+    - builder_table_create_smkn1pangkep_perpustakaan_peminjaman.php
 1.0.10:
-  - "Updated table smkn1pangkep_perpustakaan_peminjaman"
-  - builder_table_update_smkn1pangkep_perpustakaan_peminjaman.php
+    - 'Updated table smkn1pangkep_perpustakaan_peminjaman'
+    - builder_table_update_smkn1pangkep_perpustakaan_peminjaman.php
 1.0.11:
-  - "Updated table smkn1pangkep_perpustakaan_kategoribuku"
-  - builder_table_update_smkn1pangkep_perpustakaan_kategoribuku.php
+    - 'Updated table smkn1pangkep_perpustakaan_kategoribuku'
+    - builder_table_update_smkn1pangkep_perpustakaan_kategoribuku.php
 1.0.12:
-  - "Updated table smkn1pangkep_perpustakaan_koleksipribadi"
-  - builder_table_update_smkn1pangkep_perpustakaan_koleksipribadi.php
+    - 'Updated table smkn1pangkep_perpustakaan_koleksipribadi'
+    - builder_table_update_smkn1pangkep_perpustakaan_koleksipribadi.php
 1.0.13:
-  - "Updated table smkn1pangkep_perpustakaan_peminjaman"
-  - builder_table_update_smkn1pangkep_perpustakaan_peminjaman_2.php
+    - 'Updated table smkn1pangkep_perpustakaan_peminjaman'
+    - builder_table_update_smkn1pangkep_perpustakaan_peminjaman_2.php
 1.0.14:
-  - "Updated table smkn1pangkep_perpustakaan_ulasanbuku"
-  - builder_table_update_smkn1pangkep_perpustakaan_ulasanbuku.php
+    - 'Updated table smkn1pangkep_perpustakaan_ulasanbuku'
+    - builder_table_update_smkn1pangkep_perpustakaan_ulasanbuku.php
 1.0.15:
-  - "Updated table smkn1pangkep_perpustakaan_koleksipribadi"
-  - builder_table_update_smkn1pangkep_perpustakaan_koleksipribadi_2.php
+    - 'Updated table smkn1pangkep_perpustakaan_koleksipribadi'
+    - builder_table_update_smkn1pangkep_perpustakaan_koleksipribadi_2.php
 1.0.16:
-  - "Updated table smkn1pangkep_perpustakaan_peminjaman"
-  - builder_table_update_smkn1pangkep_perpustakaan_peminjaman_3.php
+    - 'Updated table smkn1pangkep_perpustakaan_peminjaman'
+    - builder_table_update_smkn1pangkep_perpustakaan_peminjaman_3.php
 1.0.17:
-  - "Updated table smkn1pangkep_perpustakaan_peminjaman"
-  - builder_table_update_smkn1pangkep_perpustakaan_peminjaman4.php
+    - 'Updated table smkn1pangkep_perpustakaan_peminjaman'
+    - builder_table_update_smkn1pangkep_perpustakaan_peminjaman4.php
 1.0.18:
-  - "Updated table smkn1pangkep_perpustakaan_data"
-  - builder_table_update_smkn1pangkep_perpustakaan_data.php
+    - 'Updated table smkn1pangkep_perpustakaan_data'
+    - builder_table_update_smkn1pangkep_perpustakaan_data.php
 1.0.19:
-  - "Updated table smkn1pangkep_perpustakaan_data"
-  - builder_table_update_smkn1pangkep_perpustakaan_data2.php
+    - 'Updated table smkn1pangkep_perpustakaan_data'
+    - builder_table_update_smkn1pangkep_perpustakaan_data2.php
 1.0.20:
-  - "Updated table smkn1pangkep_perpustakaan_member"
-  - builder_table_update_smkn1pangkep_perpustakaan_member.php
+    - 'Updated table smkn1pangkep_perpustakaan_member'
+    - builder_table_update_smkn1pangkep_perpustakaan_member.php
 1.0.21:
-  - "Updated table smkn1pangkep_perpustakaan_data"
-  - builder_table_update_smkn1pangkep_perpustakaan_data_2.php
+    - 'Updated table smkn1pangkep_perpustakaan_data'
+    - builder_table_update_smkn1pangkep_perpustakaan_data_2.php
 1.0.22:
-  - "Updated table smkn1pangkep_perpustakaan_data"
-  - builder_table_update_smkn1pangkep_perpustakaan_data_3.php
+    - 'Updated table smkn1pangkep_perpustakaan_data'
+    - builder_table_update_smkn1pangkep_perpustakaan_data_3.php
 1.0.23:
-  - "Updated table smkn1pangkep_perpustakaan_data"
-  - builder_table_update_smkn1pangkep_perpustakaan_data_4.php
+    - 'Updated table smkn1pangkep_perpustakaan_data'
+    - builder_table_update_smkn1pangkep_perpustakaan_data4.php

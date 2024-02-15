@@ -5,6 +5,7 @@ is_hidden = 0
 ==
 <?php
 use System\Classes\PluginManager;
+use Smkn1Pangkep\Perpustakaan\Models\Buku;
 
 function onStart()
 {
@@ -12,8 +13,10 @@ function onStart()
 
     // Find installed plugins
     $this['blogInstalled'] = $manager->hasPlugin('Winter.Blog');
+    $buku = Buku::limit(5)->orderBy("rating","desc")->get();
+    $this->page['dataBuku']= $buku;
 }
-?>
+
 ==
 {% partial 'nav/section-nav' %}
 
@@ -25,7 +28,7 @@ function onStart()
     </h2>
 </section>
 
-<section id="body" class="py-20 flex-grow">
+<section id="body" class="py-20 flex-grow" style="padding-bottom: 10px;">
     <div class="container max-w-screen-xl ">
         <div class="block lg:flex lg:flex-row ">
             <div class="flex-grow-0 px-8 {% if blogInstalled %} lg:w-9/12 xl:pl-0 {% else %} xl:px-0 {% endif %} " style="align-items:center">
@@ -36,3 +39,34 @@ function onStart()
         </div>
     </div>
 </section>
+<section id="body" class="mb-10 flex-grow" style="width:100%;margin-bottom: 20px;">
+    <div class="container max-w-screen-xl">
+        <div class="block" style="flex-direction: row;display: flex;gap: 15px; flex-wrap: wrap;">
+            {% for buku in this.page.dataBuku %}
+            <div class="card" style="width: 13rem;">
+                <img class="card-img-top" src="{{ buku.cover.path}}" alt="Card image cap">
+                <div class="card-body" style="text-align: center;display: flex;flex-direction: column;align-items: center;">
+                    <h5 class="card-title">{{ buku.judul }}</h5>
+                    <div style="width: 100%;" class="rate" data-rate-value="{{ buku.rating }}" ></div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">status:{{ buku.status == 1?'Terpinjam':'Tersedia' }}</li>
+                    <li class="list-group-item">penulis:{{buku.penulis}}</li>
+                    <li class="list-group-item">tahun terbit:{{ buku.tahun_terbit}}</li>
+                </ul>
+                <div class="card-body" style="text-align: center;font-size: large;background-color: aquamarine;text-decoration: solid;" >
+                    <a href="/ulasan/{{ buku.id }}" class="button btn btn-info"  ><span style="color: rgb(252, 249, 249);">Ulasan</span></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% put scripts%}
+<script>
+    $(".rate").rate({
+            max_value: 6,
+            step_size: 1,
+        });
+</script>
+{% endput%}

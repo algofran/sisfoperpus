@@ -5,9 +5,20 @@ is_hidden = 0
 ==
 use Smkn1Pangkep\Perpustakaan\Models\Buku;
 public function onStart() {
-    $buku = Buku::get();
+    $cari=\Session::get('cari');
+    if($cari != ""){
+        $buku = Buku::where("judul","like","%$cari%")->get();    
+    }else{
+
+        $buku = Buku::get();
+    }
     $this->page['dataBuku']= $buku;
 } 
+public function onCari(){
+    $input=input();
+    \Session::put("cari",$input["cari"]);
+    return \Redirect::to("/katalog");
+}
 ==
 {% partial 'nav/section-nav' %}
 <section id="hero" class="bg-gradient-to-b from-blue-500 to-blue-600 hero">
@@ -18,14 +29,30 @@ public function onStart() {
         Perpustakaan SMKN 1 Pangkajene
     </h2>
 </section>
-<section id="body" class="py-20 flex-grow" style="width:100%">
+<section>
+    <div class="container max-w-screen-xl">
+        <form  data-request="onCari">
+            <div>
+                <label for="exampleInputEmail1"></label>
+                <input type="text" name="cari" class="form-control" placeholder="cari buku">
+            </div>
+        </form>
+    </div>
+</section>
+<section  class="py-20 flex-grow" style="width:100%">
     <div class="container max-w-screen-xl">
         <div class="block" style="flex-direction: row;display: flex;gap: 15px; flex-wrap: wrap;">
+            {%if  this.page.dataBuku | length <= 0 %}
+            <div >
+                buku tidak di temukan
+            </div>
+            {%endif%}
             {% for buku in this.page.dataBuku %}
             <div class="card" style="width: 13rem;">
                 <img class="card-img-top" src="{{ buku.cover.path}}" alt="Card image cap">
-                <div class="card-body" style="text-align: center;">
+                <div class="card-body" style="text-align: center;display: flex;flex-direction: column;align-items: center;">
                     <h5 class="card-title">{{ buku.judul }}</h5>
+                    <div style="width: 100%;" class="rate" data-rate-value="{{buku.rating}}" ></div>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">status:{{ buku.status == 1?'Terpinjam':'Tersedia' }}</li>
@@ -33,10 +60,18 @@ public function onStart() {
                     <li class="list-group-item">tahun terbit:{{ buku.tahun_terbit}}</li>
                 </ul>
                 <div class="card-body" style="text-align: center;font-size: large;background-color: aquamarine;text-decoration: solid;" >
-                    <a href="/ulasan/{{ buku.id }}" class="button" ><span style="color: black;">ulasan</span></a>
+                    <a href="/ulasan/{{ buku.id }}" class="button btn btn-info"  ><span style="color: rgb(252, 249, 249);">Ulasan</span></a>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
 </section>
+{% put scripts%}
+<script>
+    $(".rate").rate({
+            max_value: 6,
+            step_size: 1,
+        });
+</script>
+{% endput%}

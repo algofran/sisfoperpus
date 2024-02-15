@@ -40,6 +40,7 @@ class DataBuku extends Controller
                 trace_log($u->rating);
             }
             trace_log($totalRating);
+            if (count ($ulasan )> 1)
             $rating = ($totalRating / count($ulasan))   ;
             trace_log($rating);
             $data->rating = $rating;
