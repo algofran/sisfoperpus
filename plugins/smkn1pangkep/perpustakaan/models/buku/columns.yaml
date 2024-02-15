@@ -28,3 +28,6 @@ columns:
     status:
         label: status
         type: switch
+    rating:
+        label: Rating
+        type: number
